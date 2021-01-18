@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../ui/home/home_screen.dart';
 import '../../ui/splash_screen.dart';
-
 import 'route_constants.dart';
 
 Route routes(RouteSettings settings) {

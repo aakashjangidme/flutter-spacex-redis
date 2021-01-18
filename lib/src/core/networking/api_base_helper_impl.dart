@@ -3,25 +3,22 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:logging/logging.dart';
+
 import '../constants/api_routes.dart';
-
-
 import 'api_base_helper.dart';
 import 'app_exceptions.dart';
 
 class HttpServiceImpl implements HttpService {
   final _log = Logger('ApiBaseHelperImpl');
 
-  final String _baseUrl = ApiRoutes.base_url;
-
   //
   @override
-  Future<dynamic> get(String url) async {
+  Future<dynamic> get([String url]) async {
     _log.finest('API GET : $url\n');
 
     var responseJson;
     try {
-      final response = await http.get(_baseUrl + url);
+      final response = await http.get(url);
       responseJson = _returnResponse(response);
     } on SocketException {
       _log.shout('No Internet connection');
@@ -33,14 +30,14 @@ class HttpServiceImpl implements HttpService {
 
   @override
   Future<dynamic> post(String url, dynamic body) async {
-    _log.finest('API POST : ${_baseUrl + url}\n$body');
+    _log.finest('API POST : ${url}\n$body');
 
     var headers = <String, String>{'Content-Type': 'application/json'};
 
     var responseJson;
     try {
       final response = await http.post(
-        _baseUrl + url,
+        url,
         body: json.encode(body),
         headers: headers,
         encoding: Encoding.getByName('utf-8'),

@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cached_network_image: ^2.5.0
   cupertino_icons: ^1.0.0
   fluttertoast: ^7.1.6
   get_it: ^5.0.4
@@ -30,6 +31,7 @@ dependencies:
   logging: ^0.11.4
   provider: ^4.3.3
   shared_preferences: ^0.5.12+4
+  shimmer: ^1.1.2
 
 dev_dependencies:
   flutter_test:

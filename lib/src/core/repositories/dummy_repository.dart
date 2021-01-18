@@ -1,7 +1,6 @@
+import '../../locator.dart';
 import '../networking/api_base_helper.dart';
 import '../provider/movie_provider.dart';
-
-import '../../locator.dart';
 
 /// Example class.
 class MovieRepository {

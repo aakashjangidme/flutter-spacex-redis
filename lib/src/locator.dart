@@ -3,6 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'core/networking/api_base_helper.dart';
 import 'core/networking/api_base_helper_impl.dart';
 import 'core/repositories/dummy_repository.dart';
+import 'core/repositories/rockets_repository.dart';
+
 
 
 
@@ -23,4 +25,5 @@ Future<void> setupLocator() async {
   locator.registerLazySingleton<HttpService>(() => HttpServiceImpl());
 
   locator.registerLazySingleton<MovieRepository>(() => MovieRepository());
+  locator.registerLazySingleton<RocketsRepository>(() => RocketsRepository());
 }
