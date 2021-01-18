@@ -50,18 +50,5 @@ class Utils {
     }
   }
 
-  static void pLog(dynamic message, {StackTrace s}) {
-    if (kDebugMode) {
-      log(message.toString(),
-          level: 2, name: 'sky/', time: DateTime.now(), stackTrace: s);
-    }
-  }
 
-  static String getChatHashId(currentId, peerId) {
-    if (currentId.hashCode <= peerId.hashCode) {
-      return '$currentId-$peerId';
-    } else {
-      return '$peerId-$currentId';
-    }
-  }
 }

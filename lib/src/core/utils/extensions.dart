@@ -7,8 +7,6 @@ extension Extension on Object {
 
   bool isNullEmptyZeroOrFalse() =>
       this == null || this == '' || !this || this == 0;
-  //
-  void printLog() => Utils.pLog(this);
 }
 
 extension Initials on String {
